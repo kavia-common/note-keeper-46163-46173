@@ -1,3 +1,8 @@
+/**
+ * Resolve the backend base URL.
+ * Priority: REACT_APP_API_BASE env -> fallback to local dev http://localhost:3001
+ * Note: Ensure the backend CORS allows http://localhost:3000 in dev.
+ */
 const getBaseUrl = () => {
   const envBase = process.env.REACT_APP_API_BASE;
   return envBase && envBase.trim().length > 0 ? envBase : 'http://localhost:3001';
